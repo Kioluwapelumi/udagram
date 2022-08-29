@@ -32,7 +32,7 @@ import {Router, Request, Response} from 'express';
     // let image_url = res.send(req.query.image_url.toString())
     let image_url = req.query.image_url;
     if (image_url==='' || !image_url) {
-      res.status(400).send("Image url is required");
+      res.status(422).send("Image url is required");
     }else{
       image_url=image_url.toString()
       const filtered_image = await filterImageFromURL(image_url);
